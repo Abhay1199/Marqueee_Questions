@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            color: blue;
+        }
+        .field{
+
+        }
+        .error{
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <h1>Form Validation</h1>
+        <div class="field">
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" placeholder="Rahul">
+            <p class="name" id="nameError"></p>
+        </div>
+        <div class="field">
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" placeholder="test@gmail.com">
+            <p class="error" id="emailError"></p>
+        </div>
+        <div class="field">
+            <label for="password">password</label>
+            <input type="text" name="password" id="password" placeholder="123*******9">
+            <p class="password" id="passwordError"></p>
+        </div>
+
+        <button id="submitBtn" type="submit"></button>
+    </form>
+    <script>
+        let form= document.querySelector("#form");
+        form.addEventListener("submit",(e)=>{
+            let isinvalidinput=false;
+            e.preventDefault();
+
+            // name
+            let name=document.querySelector("#name");
+            let p = document.querySelector("#nameError");
+            if(name.value.length < 3){
+                console.log("to short name!");
+                p.style.display="block";
+                p.innerHTML="too Short Name";
+                name.classList.add("invalid");
+                isinvalidinput=false;
+            }else{
+                p.style.display="none";
+                p.innerHTML="";
+                name.classList.remove("invalid");
+                isinvalidinput=true;
+            }
+            if(isinvalidinput){
+                form.reset();
+                alert("Form was successfully Submitted");
+            }
+
+            // email
+            let email=document.querySelector("#email");
+            let emailError = document.querySelector("#emailError");
+            if(name.value.length < 3){
+                console.log("to short name!");
+                p.style.display="block";
+                p.innerHTML="too Short Name";
+                name.classList.add("invalid");
+                isinvalidinput=false;
+            }else{
+                p.style.display="none";
+                p.innerHTML="";
+                name.classList.remove("invalid");
+                isinvalidinput=true;
+            }
+            if(isinvalidinput){
+                form.reset();
+                alert("Form was successfully Submitted");
+
+            // password
+
+            let password=document.querySelector("#password");
+            let passwordError = document.querySelector("#passwordError");
+            if(name.value.length < 3){
+                console.log("to short name!");
+                p.style.display="block";
+                p.innerHTML="Invalid password";
+                name.classList.add("invalid");
+                isinvalidinput=false;
+            }else{
+                p.style.display="none";
+                p.innerHTML="";
+                name.classList.remove("invalid");
+                isinvalidinput=true;
+            }
+            if(isinvalidinput){
+                form.reset();
+                alert("Form was successfully Submitted");
+        })
+    </script>
+</body>
+</html>

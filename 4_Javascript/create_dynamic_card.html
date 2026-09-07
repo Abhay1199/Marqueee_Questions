@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(165,175,186);
+        }
+        .card{
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            min-height: 200px;
+            border-radius: 10%;
+            text-align: center;
+        }
+        .card img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card_container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap:20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card_container"></div>
+    <script>
+        const products=[
+            {
+                imageURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRPlWzR86Xg8pC8XAz_FTllGOta5N0-nDOMsPp96btw&s=10",
+                name:"Laptop",
+                brand:"Dell",
+                price:"$65,000",
+                category:"Electronics"
+            },
+            {
+                imageURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRPlWzR86Xg8pC8XAz_FTllGOta5N0-nDOMsPp96btw&s=10",
+                name:"IPhone",
+                brand:"Apple",
+                price:"$80,000",
+                category:"Mobile"
+            },
+        ]
+        let container=document.querySelector(".card_container");
+        products.map(product=>{
+            let card=document.createElement("div");
+            card.className="card";
+            card.innerHTML=`
+                <img src="${product.imageURL}">
+                <h2> name: ${product.name} </h2>
+                <p> brand: ${product.brand} </p>
+                <p><strong>Price: ${product.price}</strong></p>
+            `
+            container.appendChild(card);
+        })
+    </script>
+</body>
+</html>

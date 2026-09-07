@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="counter">
+        <h1>Counter App</h1>
+        <h2>0</h2>
+    </div>
+    <button class="start">Start</button>
+    <button class="stop">Stop</button>
+    <button class="restart">Restart</button>
+    <button class="resume">Resume</button>
+    <script>
+        // let app=document.getElementsByClassName("counter");
+        // let start= document.querySelector("start");
+        // let stop=document.querySelector("stop");
+        // let restart=document.querySelector("restart");
+
+
+        // let counter= document.createElement("div");
+        // let head=document.createElement("h3");
+        // let increment=document.createElement("h4");
+        // head.textContent("Counter App");
+        // counter.clientWidth("100px");
+        // counter.clientHeight("100px");
+        // start.addEventListener("click",()=>{
+        //     for(let i=0;i<1000;i++){
+                
+        //         increment.textContent(i);
+        //         if(stop.addEventListener("click",()=> {
+        //             increment.textContent(i);
+        //             break;
+        //         }))
+        //         if(restart.addEventListener("click",()=>{
+        //             i=0;
+        //             increment.textContent(i);
+        //         }))
+        //     }
+        // })
+
+        let count =0;
+        let clock=null;
+        function update(){
+            let h2=document.querySelector("h2");
+            h2.innerHTML=count;
+        }
+        function start(){
+            
+            setInterval(()=>{
+                count++;
+                update();
+                console.log(count);
+            },1000)
+        }
+        function stop(){
+            clearInternal(clock);
+            console.log(count);
+        }
+        function reset(){
+            stop();
+            count=0;
+            update();
+            console.log(count);
+        }
+        function resume(){
+            if(clock!=null){
+                start();
+            }
+            console.log(count);
+            return count==0;
+        }
+        let start= document.querySelector(".start");
+        let stop = document.querySelector(".stop");
+        let reset = document.querySelector(".restart");
+        let resume=document.querySelector(".resume");
+        start.addEventListener("click",start);
+        stop.addEventListener("click",stop);
+        reset.addEventListener("click",reset);
+        resume.addEventListener("click",resume);
+    </script>
+</body>
+</html>

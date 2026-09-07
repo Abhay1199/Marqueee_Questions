@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            display:flex;
+            justify-content: center;
+            /* align-items:; */
+        }
+        /* h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }  */
+        input{
+            height: 35px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button{
+            height: 35px;
+            width: 50%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Interactive Text Manipulator</h1>
+        <input type="text" id="text-id" placeholder="Type something..." > 
+        <p>Your text will appear here</p>
+        <button id="show">Show Text</button><button id="clear">Clear</button><br><button id="UppearCase">Uppear Case</button><button id="toggle">Toggle Highlight</button>
+
+        <script>
+            let text=document.querySelector("p");
+
+
+
+            // let text=document.querySelector("p");
+            function value_mainpulate(value){
+                text.innerText=value;
+            }
+
+            let input = document.querySelector("#text-id");
+            // let value=input.value;
+            
+            let show = document.querySelector("#show");
+            show.addEventListener("click",function(){
+                text.innerHTML=input.value;
+            });
+
+            let clear = document.querySelector("#clear");
+            clear.addEventListener("click",function(){
+                text.innerHTML=" ";
+                input.value=" ";
+            })
+
+            let upper = document.querySelector("#UppearCase");
+            upper.addEventListener("click",function(){
+                text.innerHTML=(input.value).toUpperCase();
+            })
+
+            // input.addEventListener("input",()=>{
+            //     value_mainpulate(input.value);
+            // });
+        </script>
+    </div>
+</body>
+</html>

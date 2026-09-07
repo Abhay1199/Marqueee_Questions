@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            height: 35px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>About Me</h1>
+        <p>I am learning DOM manipulation and building interactive web pages.</p>
+        <button id="edit-btn">Edit</button>
+        <button id="save-btn">Save</button>
+
+        <script>
+            let inp = document.createElement("input");
+            function editable(){
+                inp.placeholder="Type Here...";
+                inp.type="Text";
+                inp.id="input";
+                let para=document.querySelector("p");
+                para.replaceWith(inp);
+            }
+            function save_fun(){
+                let value= inp.value;
+                let p = document.createElement("p");
+                p.innerText= value;
+                inp.replaceWith(p);
+            }
+
+            let edit= document.querySelector("#edit-btn");
+            edit.addEventListener("click",editable);
+            let save = document.querySelector("#save-btn");
+            save.addEventListener("click",save_fun);
+        </script>
+    </div>
+</body>
+</html>

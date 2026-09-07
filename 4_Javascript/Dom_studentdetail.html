@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="bta">
+        Create Student Card
+    </button>
+    <script>
+        let student=document.getElementById("container");
+        const btn=document.querySelector("button");
+        btn.addEventListener("click",()=>{
+            const student_card=document.createElement("div");
+            const heading=document.createElement("h1");
+            heading.textContent="Student Profile";
+            const name=document.createElement("p");
+            name.textContent="Shahid Hussein";
+            const course=document.createElement("p");
+            course.textContent="Course : Cyber Security";
+            const college =document.createElement("p");
+            college.textContent="Maulana Afzal College";
+            const badge =document.createElement("span");
+            badge.textContent="Active Student";
+            student_card.append(heading,name,course,college,badge);
+            container.append(student_card);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            background-color: rgb(71, 67, 67);
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Theme changer</h1>
+        <div class="col">
+            <h3>Theme changer</h3>
+            <p>Click the button to change the theme</p>
+            <button>Change theme</button>
+        </div>
+        <script>
+            let colors=["white","red","orange","yellow","blue"];
+            function color_change(){
+                random_color= Math.floor(Math.random()*5);
+                let screen = document.querySelector("body");
+                screen.classList.toggle("main-container");
+
+
+                // document.body.style.backgroundColor= colors[random_color];
+            }
+
+            
+
+            let change = document.querySelector("button");
+            change.addEventListener("click",color_change);
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border-radius: 5px;
+            display: flex;
+        }
+        .box.hover{
+            background-color: rgb(199,199,248);
+            border: 1px solid blue;
+        }
+        .box.clicked{
+            background-color: rgb(139,246,139);
+            border: 1px solid green;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Mouse Events Demo</h1>
+    <div class="container">
+    <div class="box">
+        <p>Move,click, or double-click me!</p>
+    </div>
+    <p class="status">Status: No events yet</p>
+    <p class="coordinate">Box</p>
+    </div>
+    <script>
+        let box= document.querySelector(".box");
+        let status=document.querySelector(".status");
+        let coordinate=document.querySelector(".coordinate");
+    
+        box.addEventListener("mouseover",()=>{
+
+        })
+    </script>
+</body>
+</html>

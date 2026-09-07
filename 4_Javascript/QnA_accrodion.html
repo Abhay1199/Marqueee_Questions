@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* text-align: center; */
+        }
+        .heading{
+            text-align: center;
+            width: 600px;
+        }
+        .heading h1{
+            font-size: 50px;
+
+        }
+        .faq-container{
+            background-color: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 600px;
+        }
+        .faq{
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 6px;
+            background-color: black;
+            cursor: pointer;
+        }
+        .faq .answer{
+            font-size: 14px;
+            color: rgb(162, 162,162);
+            padding: 4px;
+            letter-spacing: 4px;
+            display: none;
+        }
+        .faq.active .answer{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+        <h1>Frequently asked questions</h1>
+
+        </div>
+        <div class="faq-container">
+            <div class="faq">
+                <div class="question">What is DOM?</div>
+                <div class="answer">DOM is Document object manipulation</div>
+            </div>
+            <div class="faq">
+                <div class="question">What is DOM?</div>
+                <div class="answer">DOM is Document object manipulation</div>
+            </div>
+            <div class="faq">
+                <div class="question">What is DOM?</div>
+                <div class="answer">DOM is Document object manipulation</div>
+            </div>
+            <div class="faq">
+                <div class="question">What is DOM?</div>
+                <div class="answer">DOM is Document object manipulation</div>
+            </div>
+        </div>
+
+        <script>
+            let items=document.querySelectorAll(".faq");
+            items.forEach((item)=>{
+                let question_1= item.querySelector(".question")
+
+                question_1.addEventListener("click",()=>{
+                    item.classList.toggle("active");
+                })
+            }
+        )
+        </script>
+    </div>
+</body>
+</html>

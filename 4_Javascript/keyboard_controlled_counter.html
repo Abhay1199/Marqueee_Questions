@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Keyboard Controlled Counter game</h2>
+    <p>Press A to increase,D to decrease,S to reset</p>
+    <h1 class="counting">0</h1>
+    <button>Disable Controls</button>
+    <script>
+        let count=0;
+        let count_inc=document.querySelector(".counting");
+        
+        document.addEventListener("keypress",(event)=>{
+            if(event.key==='a'){
+                count++;
+            }else if(event.key==='d')
+            count--;
+            else if(event.key==='s') count=0;
+
+            count_inc.innerHTML=count;
+        })
+        let disbutton=
+    </script>
+</body>
+</html>

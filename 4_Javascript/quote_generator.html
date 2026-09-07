@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Quote Generator</h2>
+        <p>Famous Quote</p>
+        <button>Generate Quote</button>
+    </div>
+    <script>
+        let arr=[
+            "To solve problem break the problem",
+            "Divide and rule",
+            "first solve the small peice then upgrade to big peice"
+    ]
+    let count=0;
+    function quote(){
+        let fam= document.querySelector("p");
+        // console.log("quote");
+            fam.innerText= arr[count];
+            count++;
+            if(count==arr.length) count=0;
+        }
+    let Generate= document.querySelector("button");
+    Generate.addEventListener("click",quote);
+    </script>
+</body>
+</html>
